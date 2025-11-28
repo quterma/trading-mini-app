@@ -1,5 +1,5 @@
-import { FC } from 'react';
-import { Card } from '@/shared/ui/Card';
+import type { FC } from 'react';
+import { Card } from '@/shared/ui';
 
 export const PriceChart: FC = () => {
   return (

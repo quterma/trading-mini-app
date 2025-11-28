@@ -1,6 +1,5 @@
-import { FC } from 'react';
-import { Card } from '@/shared/ui/Card';
-import { Button } from '@/shared/ui/Button';
+import type { FC } from 'react'
+import { Card, Button } from '@/shared/ui'
 
 export const ConnectWallet: FC = () => {
   return (
@@ -9,5 +8,5 @@ export const ConnectWallet: FC = () => {
       <p className="text-gray-600 mb-4">Connect your wallet to start trading</p>
       <Button>Connect Wallet</Button>
     </Card>
-  );
-};
+  )
+}

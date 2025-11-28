@@ -1,12 +1,8 @@
-import { useState, useEffect } from 'react';
-import { mockPrices, PricePoint } from '@/mocks/prices';
+import { useState } from 'react';
+import { mockPrices, type PricePoint } from '@/mocks/prices';
 
 export const usePriceData = () => {
-  const [prices, setPrices] = useState<PricePoint[]>(mockPrices);
-
-  useEffect(() => {
-    setPrices(mockPrices);
-  }, []);
+  const [prices] = useState<PricePoint[]>(mockPrices);
 
   return { prices };
 };
