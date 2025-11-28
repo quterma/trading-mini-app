@@ -1,4 +1,3 @@
-export { mockWallet } from './wallet';
-export { mockPrices } from './prices';
-export type { WalletData } from './wallet';
-export type { PricePoint } from './prices';
+export { MOCK_WALLET, generateRandomBalance } from './wallet'
+export { mockPrices } from './prices'
+export type { PricePoint } from './prices'
