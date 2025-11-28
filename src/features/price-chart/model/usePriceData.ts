@@ -1,8 +1,12 @@
-import { useState } from 'react';
-import { mockPrices, type PricePoint } from '@/mocks/prices';
+import { useMemo } from 'react'
+import { mockPrices } from '@/mocks'
+import type { PricePoint, PriceStats } from './types'
+import { computePriceStats } from './utils'
 
 export const usePriceData = () => {
-  const [prices] = useState<PricePoint[]>(mockPrices);
+  const points: PricePoint[] = mockPrices
 
-  return { prices };
-};
+  const stats: PriceStats = useMemo(() => computePriceStats(points), [points])
+
+  return { points, stats }
+}
