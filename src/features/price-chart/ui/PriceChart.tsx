@@ -15,9 +15,12 @@ export const PriceChart: FC = () => {
     price: point.price,
   }))
 
+  const currentPrice = !isNaN(stats.currentPrice) ? stats.currentPrice.toFixed(2) : '0.00'
+  const changePercent = !isNaN(stats.changePercent) ? stats.changePercent.toFixed(2) : '0.00'
+
   return (
     <Card>
-      <div className="flex justify-between items-center mb-4">
+      <div className="flex flex-wrap justify-between items-center gap-2 mb-4">
         <h2 className="text-xl font-bold">График цены</h2>
         <div className="flex gap-2">
           <Button variant="secondary" onClick={reset}>
@@ -28,10 +31,12 @@ export const PriceChart: FC = () => {
       </div>
 
       <div className="mb-4">
-        <div className="text-2xl font-bold">${stats.currentPrice.toFixed(2)}</div>
-        <div className={`text-sm ${stats.changePercent >= 0 ? 'text-green-600' : 'text-red-600'}`}>
-          {stats.changePercent >= 0 ? '+' : ''}
-          {stats.changePercent.toFixed(2)}%
+        <div className="text-2xl font-bold">${currentPrice}</div>
+        <div
+          className={`text-sm ${Number(changePercent) >= 0 ? 'text-green-600' : 'text-red-600'}`}
+        >
+          {Number(changePercent) >= 0 ? '+' : ''}
+          {changePercent}%
         </div>
       </div>
 
