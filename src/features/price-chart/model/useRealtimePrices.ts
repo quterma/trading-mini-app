@@ -15,8 +15,8 @@ const generateNextPoint = (lastPoint: PricePoint): PricePoint => {
   }
 }
 
-export const useRealtimePrices = () => {
-  const [points, setPoints] = useState<PricePoint[]>(() => [...mockPrices])
+export const useRealtimePrices = (initialPoints: PricePoint[] = mockPrices) => {
+  const [points, setPoints] = useState<PricePoint[]>(() => [...initialPoints])
   const [isLive, setIsLive] = useState(false)
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null)
 
@@ -27,9 +27,9 @@ export const useRealtimePrices = () => {
   }, [])
 
   const reset = useCallback(() => {
-    setPoints([...mockPrices])
+    setPoints([...initialPoints])
     setIsLive(false)
-  }, [])
+  }, [initialPoints])
 
   useEffect(() => {
     if (isLive) {
