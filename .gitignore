@@ -27,3 +27,6 @@ dist-ssr
 nul
 coverage
 
+# Claude Code local settings
+.claude/
+
