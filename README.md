@@ -1,6 +1,6 @@
 # Trading Mini App
 
-Минимальное приложение для торговли на React + TypeScript + Tailwind CSS.
+Минимальное приложение (моделька-макетик) для торговли на React + TypeScript + Tailwind CSS.
 
 ## Запуск
 
