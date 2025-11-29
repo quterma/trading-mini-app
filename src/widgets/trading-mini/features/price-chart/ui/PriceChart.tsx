@@ -1,7 +1,7 @@
 import type { FC } from 'react'
 import { AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts'
 import { Card, Button } from '@/shared/ui'
-import { usePriceData, useRealtimePrices } from '@/features/price-chart'
+import { usePriceData, useRealtimePrices } from '../model'
 
 export const PriceChart: FC = () => {
   const { points: basePoints } = usePriceData()

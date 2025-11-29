@@ -125,7 +125,7 @@ describe('useRealtimePrices', () => {
   })
 
   test('должен очищать интервал при размонтировании', () => {
-    const clearIntervalSpy = vi.spyOn(global, 'clearInterval')
+    const clearIntervalSpy = vi.spyOn(globalThis, 'clearInterval')
     const { result, unmount } = renderHook(() => useRealtimePrices())
 
     act(() => {

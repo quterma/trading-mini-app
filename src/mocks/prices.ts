@@ -1,4 +1,4 @@
-import type { PricePoint } from '@/features/price-chart'
+import type { PricePoint } from '@/widgets/trading-mini/features/price-chart'
 
 export const mockPrices: PricePoint[] = Array.from({ length: 24 }, (_, i) => ({
   timestamp: Date.now() - (23 - i) * 3600 * 1000,
