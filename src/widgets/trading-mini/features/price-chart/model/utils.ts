@@ -15,9 +15,7 @@ export const computePriceStats = (points: PricePoint[]): PriceStats => {
 
   const changeAbs = previousPrice !== undefined ? currentPrice - previousPrice : 0
   const changePercent =
-    previousPrice !== undefined && previousPrice !== 0
-      ? (changeAbs / previousPrice) * 100
-      : 0
+    previousPrice !== undefined && previousPrice !== 0 ? (changeAbs / previousPrice) * 100 : 0
 
   return {
     currentPrice,

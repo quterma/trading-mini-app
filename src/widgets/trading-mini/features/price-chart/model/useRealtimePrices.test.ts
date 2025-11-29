@@ -16,9 +16,7 @@ describe('useRealtimePrices', () => {
     const { result } = renderHook(() => useRealtimePrices())
     expect(result.current.points).toEqual(mockPrices)
     expect(result.current.isLive).toBe(false)
-    expect(result.current.stats.currentPrice).toBe(
-      mockPrices[mockPrices.length - 1].price,
-    )
+    expect(result.current.stats.currentPrice).toBe(mockPrices[mockPrices.length - 1].price)
   })
 
   test('live off → нет обновлений', () => {
@@ -98,7 +96,7 @@ describe('useRealtimePrices', () => {
 
     expect(priceAfterUpdate).not.toBe(priceBeforeUpdate)
     expect(result.current.stats.currentPrice).toBe(
-      result.current.points[result.current.points.length - 1].price,
+      result.current.points[result.current.points.length - 1].price
     )
   })
 

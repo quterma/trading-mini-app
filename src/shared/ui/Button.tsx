@@ -1,16 +1,11 @@
-import type { ButtonHTMLAttributes, FC } from 'react';
-import clsx from 'clsx';
+import type { ButtonHTMLAttributes, FC } from 'react'
+import clsx from 'clsx'
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'primary' | 'secondary';
+  variant?: 'primary' | 'secondary'
 }
 
-export const Button: FC<ButtonProps> = ({
-  children,
-  variant = 'primary',
-  className,
-  ...props
-}) => {
+export const Button: FC<ButtonProps> = ({ children, variant = 'primary', className, ...props }) => {
   return (
     <button
       className={clsx(
@@ -23,5 +18,5 @@ export const Button: FC<ButtonProps> = ({
     >
       {children}
     </button>
-  );
-};
+  )
+}
