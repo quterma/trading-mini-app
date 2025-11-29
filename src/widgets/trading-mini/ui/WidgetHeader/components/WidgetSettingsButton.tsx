@@ -7,7 +7,7 @@ export function WidgetSettingsButton() {
   return (
     <button
       onClick={() => setIsExpanded(!isExpanded)}
-      className="flex items-center px-[4px] h-[30px] bg-[#222222] rounded-[3px] border border-transparent hover:border-[#333333] cursor-pointer transition-colors outline-none focus:outline-none"
+      className="flex items-center px-[4px] h-[30px] bg-[#222222] rounded-[3px] border-[0px] hover:border-[#333333] cursor-pointer transition-colors outline-none focus:outline-none"
       aria-label="Toggle settings"
     >
       <svg
