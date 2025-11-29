@@ -17,7 +17,7 @@ const generateNextPoint = (lastPoint: PricePoint): PricePoint => {
 
 export const useRealtimePrices = (initialPoints: PricePoint[] = mockPrices) => {
   const [points, setPoints] = useState<PricePoint[]>(() => [...initialPoints])
-  const [isLive, setIsLive] = useState(false)
+  const [isLive, setIsLive] = useState(true)
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null)
 
   const stats: PriceStats = useMemo(() => computePriceStats(points), [points])

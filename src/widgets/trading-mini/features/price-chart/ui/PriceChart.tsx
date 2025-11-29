@@ -20,8 +20,8 @@ export const PriceChart: FC = () => {
   const changePercent = !isNaN(stats.changePercent) ? stats.changePercent.toFixed(2) : '0.00'
 
   return (
-    <div className="flex flex-col gap-[8px] px-[12px]">
-      <div className="flex justify-between items-center">
+    <div className="flex flex-col gap-[8px]">
+      <div className="flex justify-between items-center px-[12px]">
         <div className="flex items-center gap-[8px] font-[Geist]">
           <div className="text-[30px] font-normal leading-none font-[400]">
             <span className="text-[#ffffff]">{formattedInteger}</span>
@@ -70,21 +70,49 @@ export const PriceChart: FC = () => {
         </div>
       </div>
 
-      <ResponsiveContainer width="100%" height={250}>
+      <ResponsiveContainer width="100%" height={320}>
         <AreaChart data={chartData}>
           <defs>
             <linearGradient id="colorPrice" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="5%" stopColor="#3b82f6" stopOpacity={0.3} />
-              <stop offset="95%" stopColor="#3b82f6" stopOpacity={0} />
+              <stop offset="0%" stopColor="rgba(236, 189, 117, 0.1)" />
+              <stop offset="88.3%" stopColor="rgba(236, 189, 117, 0)" />
             </linearGradient>
           </defs>
-          <XAxis dataKey="time" tick={{ fontSize: 12 }} />
-          <YAxis domain={['auto', 'auto']} tick={{ fontSize: 12 }} />
-          <Tooltip />
+          <XAxis
+            dataKey="time"
+            tick={{ fontSize: 10, fontFamily: 'Roboto', fontWeight: 400 }}
+            interval="preserveStartEnd"
+            minTickGap={50}
+          />
+          <YAxis
+            orientation="right"
+            domain={['auto', 'auto']}
+            tick={{ fontSize: 10, fontFamily: 'Roboto', fontWeight: 400 }}
+            tickFormatter={(value) => value.toFixed(2)}
+          />
+          <Tooltip
+            formatter={(value: number) => [value.toFixed(2)]}
+            labelFormatter={() => ''}
+            contentStyle={{
+              backgroundColor: '#97fca6',
+              border: 'none',
+              borderRadius: '4px',
+              padding: '1px 8px',
+              fontFamily: 'Roboto',
+              fontSize: '10px',
+              fontWeight: 400,
+              lineHeight: '150%',
+              color: '#212121',
+            }}
+            itemStyle={{
+              paddingLeft: 0,
+              color: 'rgba(33, 33, 33, 1)',
+            }}
+          />
           <Area
             type="monotone"
             dataKey="price"
-            stroke="#3b82f6"
+            stroke="rgba(236, 189, 117, 1)"
             fillOpacity={1}
             fill="url(#colorPrice)"
           />

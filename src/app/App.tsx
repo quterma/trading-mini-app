@@ -16,7 +16,7 @@ function App() {
         ) : (
           <button
             onClick={() => setIsTradingMiniWidgetOpen(true)}
-            className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition-colors"
+            className="p-[10px] bg-[#4a90e2] text-[#ffffff] text-[20px] font-semibold rounded-[12px] shadow-lg hover:bg-gray-800 transition-colors cursor-pointer"
           >
             Open widget
           </button>

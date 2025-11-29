@@ -34,7 +34,7 @@ export const ConnectWallet: FC = () => {
   }
 
   return (
-    <div className="flex items-center h-[36px] border border-[rgba(255,255,255,0.1)] rounded-[12px] overflow-hidden">
+    <div className="flex items-center h-[34px] border border-[rgba(255,255,255,0.1)] rounded-[12px] overflow-hidden">
       <button
         onClick={() => setIsExpanded(!isExpanded)}
         className="flex items-center gap-[4px] px-[12px] h-full bg-transparent border-[0] cursor-pointer outline-none focus:outline-none"
@@ -65,7 +65,7 @@ export const ConnectWallet: FC = () => {
       </button>
       <button
         onClick={disconnect}
-        className="flex justify-center items-center w-[36px] h-[36px] bg-[linear-gradient(161.2deg,#97FCA6_-3.56%,#F6C90F_107.13%)] border-[0] cursor-pointer outline-none focus:outline-none"
+        className="flex justify-center items-center w-[34px] h-full bg-[linear-gradient(161.2deg,#97FCA6_-3.56%,#F6C90F_107.13%)] border-[0] cursor-pointer outline-none focus:outline-none"
       >
         <img src={walletIcon} alt={'disconnect'} className="w-[15px] h-[15px]" />
       </button>
